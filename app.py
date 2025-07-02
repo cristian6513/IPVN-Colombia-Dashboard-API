@@ -23,7 +23,6 @@ def cargar_limpiar_datos():
     del leer_excel['Unnamed: 6']
     del leer_excel['Unnamed: 11']
     del leer_excel['Unnamed: 12']
-    print(leer_excel)
 
     return leer_excel
 
@@ -52,4 +51,4 @@ def filtro():
     return jsonify(datos.to_dict(orient='records'))
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5000)

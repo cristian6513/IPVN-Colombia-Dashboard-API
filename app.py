@@ -23,7 +23,6 @@ def cargar_limpiar_datos():
     del leer_excel['Unnamed: 6']
     del leer_excel['Unnamed: 11']
     del leer_excel['Unnamed: 12']
-    print(leer_excel)
 
     return leer_excel
 

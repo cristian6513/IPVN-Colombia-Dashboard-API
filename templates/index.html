@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Análisis de IPVN (Datos DANE)</title>
+    <link rel="stylesheet" href="/static/style.css">
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+	<div class="container mt-5">
+		<h1>Análisis de Precios de Vivienda</h1>
+		<h2>(Datos Oficiales del DANE)</h2>
+			<div>
+				<label for="ciudades-select">Selecciona una ciudad:</label>
+				<select id="ciudades-select" class="round">
+					<option selected>Cargando ciudades...</option>
+				</select>
+			</div>
+	</div>
+	<div>
+        <div>
+            <div class="chart-container">
+                <canvas id="grafico-precios"></canvas>
+            </div>
+        </div>
+    </div>
+	<table class="container">
+		<thead>
+			<tr>
+				<th>Ciudad</th>
+				<th>Trimestral Aptos 2024</th>
+				<th>Trimestral Aptos 2025</th>
+				<th>Trimestral Casas 2024</th>
+				<th>Trimestral Casas 2025</th>
+				<th>Año Corrido Aptos 2024</th>
+				<th>Año Corrido Aptos 2025</th>
+				<th>Año Corrido Casas 2024</th>
+				<th>Año Corrido Casas 2025</th>
+				<th>Anual Aptos 2024</th>
+				<th>Anual Aptos 2025</th>
+				<th>Anual Casas 2024</th>
+				<th>Anual Casas 2025</th>
+			</tr>
+		</thead>
+		<tbody>
+		{%for dato in datos%}
+			<tr>
+
+				<td>{{dato["Ciudad"]}}</td>
+				<td>{{dato["Trimestral_Aptos_2024"]}}</td>
+				<td>{{dato["Trimestral_Aptos_2025"]}}</td>
+				<td>{{dato["Trimestral_Casas_2024"]}}</td>
+				<td>{{dato["Trimestral_Casas_2025"]}}</td>
+				<td>{{dato["AñoCorrido_Aptos_2024"]}}</td>
+				<td>{{dato["AñoCorrido_Aptos_2025"]}}</td>
+				<td>{{dato["AñoCorrido_Casas_2024"]}}</td>
+				<td>{{dato["AñoCorrido_Casas_2025"]}}</td>
+				<td>{{dato["Anual_Aptos_2024"]}}</td>
+				<td>{{dato["Anual_Aptos_2025"]}}</td>
+				<td>{{dato["Anual_Casas_2024"]}}</td>
+				<td>{{dato["Anual_Casas_2025"]}}</td>
+			</tr>
+		{%endfor%}
+		</tbody>
+	</table>
+
+	<script src="/static/main.js"></script>
+
+
+</body>
+</html>
